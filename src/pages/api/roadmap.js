@@ -15,3 +15,10 @@ export default async function handler(req, res) {
     res.status(405).json({ message: "Method Not Allowed" });
   }
 }
+
+CREATE TABLE IF NOT EXISTS roadmap (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL,
+  description TEXT NOT NULL,
+  status TEXT NOT NULL
+);
