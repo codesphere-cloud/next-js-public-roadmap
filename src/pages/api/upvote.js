@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     });
 
     const statement = await db.prepare(
-      'UPDATE roadmap SET ' + column + ' = ' + column + ' + 1 WHERE id = ' + id
+      `UPDATE roadmap SET ${column} = ${column} +1 WHERE id = ${id}`
     );
     await statement.run();
     await statement.finalize();

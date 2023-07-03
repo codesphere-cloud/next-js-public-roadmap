@@ -21,7 +21,7 @@ export default function Home() {
   const handleUpvote = (id, column, clicked_id) => {
     fetch("/api/upvote", {
       method: "POST",
-      body: JSON.stringify({ 'id': id , 'column': column}),
+      body: JSON.stringify({ id , column}),
       headers: {
         "Content-Type": "application/json",
         Accept: 'application/json',
@@ -29,22 +29,16 @@ export default function Home() {
     })
       .then((response) => response.json())
       .then((data) => {
-        // handle voting for roadmap items
-        const updatedRoadmapItems = roadmapItems.map((item) => {
+        const updateItems = (items) => items.map((item) => {
           if (item.id === data.id) {
-            return { ...item, upvotes: data.upvotes, fires: data.fires, hearts: data.hearts};
+              return { ...item, upvotes: data.upvotes, fires: data.fires, hearts: data.hearts};
           }
           return item;
-        });
-        setRoadmapItems(updatedRoadmapItems);
-        // handle voting for shipped items
-        const updatedShippedItems = shippedItems.map((item) => {
-          if (item.id === data.id) {
-            return { ...item, upvotes: data.upvotes, fires: data.fires, hearts: data.hearts};
-          }
-          return item;
-        });
-        setShippedItems(updatedShippedItems);        
+      }); 
+      const updatedRoadmapItems = updateItems(roadmapItems);
+      setRoadmapItems(updatedRoadmapItems);
+      const updatedShippedItems = updateItems(shippedItems);
+      setShippedItems(updatedShippedItems);            
         document.getElementById(clicked_id).disabled = true;
       });
   };
