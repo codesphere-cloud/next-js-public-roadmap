@@ -4,7 +4,74 @@
 .upvote-button {
   background-color: #f2f2f2;
   border: none;
-  padding: 5px 10px;
+  padding: 0px 10px;
+  cursor: pointer;
+  max-width: fit-content;
+  border-radius: 1rem;
+}
+
+.upvote-button:disabled {
+  border: solid 1px #814bf6;
+  color: #814bf6;
+}
+
+.voting-array {
+  display: flex;
+  grid-column-gap: 5px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.roadmap {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.feature {
+  display: grid;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.feature .upvote {
+  margin-right: 10px;
   cursor: pointer;
 }
 
+.feature .title {
+  flex-grow: 1;
+}
+
+.upvote-count {
+  color: #888;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.headline {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.subheadline {
+  font-size: 16px;
+  color: #888;
+}
+
+h3 {
+  margin-bottom: 0px;
+}

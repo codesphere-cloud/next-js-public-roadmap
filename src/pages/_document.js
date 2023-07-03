@@ -1,5 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { get } from "idb-keyval";
+
 
 export default function Document({ db }) {
   return (

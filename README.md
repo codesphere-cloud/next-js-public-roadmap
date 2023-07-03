@@ -1,8 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with create-next-app.
+This public roadmap project was bootstrapped with create-next-app. It uses an SQLite database to store the items and votes. 
 
-## Getting Started
+It showcases how to run next.js in a Codesphere workspace
 
-First, run the development server:
+## Getting Started in Codesphere
+
+To run the development server:
+
+1. Run the ci prepare stage
+2. Run the ci run stage
+3. Open the deployment 
+
+## Gettin Started Locally 
+
+To run the development server:
 
 ```bash
 npm run dev
