@@ -19,21 +19,7 @@ export default async function handler(req, res) {
         hearts INT NOT NULL DEFAULT 0
       );
       `
-    );   
-
-    await db.all(
-      `
-      CREATE TABLE IF NOT EXISTS shipped (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        title TEXT NOT NULL,
-        description TEXT NOT NULL,
-        status TEXT NOT NULL,
-        upvotes INT NOT NULL DEFAULT 0,
-        fires INT NOT NULL DEFAULT 0,
-        hearts INT NOT NULL DEFAULT 0
-      );
-      `
-    );   
+    );      
 
 
     const roadmapItems = await db.all("SELECT * FROM roadmap WHERE status = 'planned'");
