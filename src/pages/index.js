@@ -34,11 +34,11 @@ export default function Home() {
               return { ...item, upvotes: data.upvotes, fires: data.fires, hearts: data.hearts};
           }
           return item;
-      }); 
+      });
       const updatedRoadmapItems = updateItems(roadmapItems);
       setRoadmapItems(updatedRoadmapItems);
       const updatedShippedItems = updateItems(shippedItems);
-      setShippedItems(updatedShippedItems);            
+      setShippedItems(updatedShippedItems);
         document.getElementById(clicked_id).disabled = true;
       });
   };
@@ -47,24 +47,24 @@ export default function Home() {
     <>
       <Head>
         <title>Codesphere Roadmap</title>
-        
+
       </Head>
       <main>
-        <div class="roadmap">
-        <div class="header">
-              <img class="logo"  src="/logo-codesphere.png" alt="Company Logo"></img>
+        <div className="roadmap">
+        <div className="header">
+              <img className="logo"  src="/logo-codesphere.png" alt="Company Logo"></img>
               <div>
-                <div class="headline">Codesphere Roadmap</div>
-                <div class="subheadline">See what's happening & what's next</div>
+                <div className="headline">Codesphere Roadmap</div>
+                <div className="subheadline">See what&apos;s happening & what&apos;s next</div>
               </div>
-        </div> 
-        <h2>Cooming soon</h2>       
+        </div>
+        <h2>Cooming soon</h2>
         <div>
           {roadmapItems.map((item) => (
-            <div key={item.id} class="feature">
+            <div key={item.id} className="feature">
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-              <div class="voting-array">
+              <div className="voting-array">
                 <button
                   id={"upvote_"+item.id}
                   className="upvote-button"
@@ -90,14 +90,14 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <h2>Recently released</h2>  
+        <h2>Recently released</h2>
 
         <div>
           {shippedItems.map((item) => (
-            <div key={item.id} class="feature">
+            <div key={item.id} className="feature">
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-              <div class="voting-array">
+              <div className="voting-array">
                 <button
                   id={"upvote_"+item.id}
                   className="upvote-button"
